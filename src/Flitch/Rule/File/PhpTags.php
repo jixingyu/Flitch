@@ -94,7 +94,7 @@ class PhpTags extends AbstractRule implements TokenRuleInterface
      */
     public function visitToken(File $file)
     {
-        $token = $token->current();
+        $token = $file->current();
 
         if ($token->getType() === T_OPEN_TAG) {
             $tag  = trim($token->getLexeme());

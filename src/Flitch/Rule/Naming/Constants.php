@@ -11,11 +11,12 @@ namespace Flitch\Rule\Naming;
 
 use Flitch\File\File;
 use Flitch\Rule\AbstractRule;
+use Flitch\Rule\TokenRuleInterface;
 
 /**
  * Constant name rule.
  */
-class Constants extends AbstractRule
+class Constants extends AbstractRule implements TokenRuleInterface
 {
     /**
      * Constant name format.

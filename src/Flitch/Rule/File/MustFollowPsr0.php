@@ -93,6 +93,8 @@ class MustFollowPsr0 extends AbstractRule implements TokenRuleInterface
                 $psr0Compliant = false;
             } elseif (count($expectedPathParts) === 0) {
                 // Vendor level namespace required.
+/**
+ * Remove psr0 namespace path compliant
                 $psr0Compliant = false;
             } else {
                 // Path should match namespace structure.
@@ -101,6 +103,7 @@ class MustFollowPsr0 extends AbstractRule implements TokenRuleInterface
                 if ($pathParts !== $expectedPathParts) {
                     $psr0Compliant = false;
                 }
+ */
             }
         }
 

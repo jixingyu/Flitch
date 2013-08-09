@@ -90,13 +90,14 @@ class Manager
             }
         }
 
+        $file->rewind();
         while ($file->valid()) {
             $position  = $file->key();
             $tokenType = $file->current()->getType();
 
             if (isset($this->listenerTokens[$tokenType])) {
                 foreach ($this->listenerTokens[$tokenType] as $ruleName) {
-                    $this->rules[$ruleName]->check($file);
+                    $this->rules[$ruleName]->visitToken($file);
                     $file->seek($position);
                 }
             }
@@ -139,7 +140,7 @@ class Manager
                 }
             }
 
-            $this->rules[] = $rule;
+            $this->rules[$ruleName] = $rule;
         }
     }
 

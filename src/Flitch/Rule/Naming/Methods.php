@@ -11,11 +11,12 @@ namespace Flitch\Rule\Naming;
 
 use Flitch\File\File;
 use Flitch\Rule\AbstractRule;
+use Flitch\Rule\TokenRuleInterface;
 
 /**
  * Method name rule.
  */
-class Methods extends AbstractRule
+class Methods extends AbstractRule implements TokenRuleInterface
 {
     /**
      * Magic methods to ignore.
